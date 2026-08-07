@@ -11,11 +11,11 @@
 
   <!-- Supabase initialisieren -->
   <script>
-    // Wichtig: auf das globale UMD-Objekt über window zugreifen, ansonsten entsteht ein TDZ-/Scope-Problem.
-    // Wir schreiben das erstellte Client-Objekt in window.supabase (überschreibt das UMD-Objekt mit dem Client).
+    // Wir erstellen den Supabase-Client als window.supabaseClient, damit das UMD-Objekt nicht überschrieben wird.
+    // Verwende hier deinen ANON-Key (öffentlich, eingeschränkte Rechte). Niemals einen service_role Key clientseitig veröffentlichen.
     window.supabase = window.supabase.createClient(
       "https://vjdynybijqlbebftdguj.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZHlueWJpanFsYmViZnRkZ3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxMjcyMzUsImV4cCI6MjEwMTcwMzIzNX0.TgL4nfQp-LkPwEr9Gr3JW3cl[...]"
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZHlueWJpanFsYmViZnRkZ3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxMjcyMzUsImV4cCI6MjEwMTcwMzIzNX0.TgL4nfQp-LkPwEr9Gr3JW3clmsLskDis-hZ_Y3bdEFk"
     );
   </script>
 </head>
