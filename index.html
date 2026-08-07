@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script>
-  const supabase = supabase.createClient(
-    "https://vjdynybijqlbebftdguj.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZHlueWJpanFsYmViZnRkZ3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxMjcyMzUsImV4cCI6MjEwMTcwMzIzNX0.TgL4nfQp-LkPwEr9Gr3JW3clmsLskDis-hZ_Y3bdEFk"
-  );
-</script>
-<link rel="stylesheet" href="style.css">
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <title>Mini Forum</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Supabase laden -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <!-- Supabase initialisieren -->
+  <script>
+    const supabase = supabase.createClient(
+      "https://vjdynybijqlbebftdguj.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZHlueWJpanFsYmViZnRkZ3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxMjcyMzUsImV4cCI6MjEwMTcwMzIzNX0.TgL4nfQp-LkPwEr9Gr3JW3clmsLskDis-hZ_Y3bdEFk"
+    );
+  </script>
 </head>
+
 <body>
   <h1>Forum</h1>
 
