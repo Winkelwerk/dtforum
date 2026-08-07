@@ -9,12 +9,13 @@
   <!-- Supabase laden -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
 
-
   <!-- Supabase initialisieren -->
   <script>
-    const supabase = supabase.createClient(
+    // Wichtig: auf das globale UMD-Objekt über window zugreifen, ansonsten entsteht ein TDZ-/Scope-Problem.
+    // Wir schreiben das erstellte Client-Objekt in window.supabase (überschreibt das UMD-Objekt mit dem Client).
+    window.supabase = window.supabase.createClient(
       "https://vjdynybijqlbebftdguj.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZHlueWJpanFsYmViZnRkZ3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxMjcyMzUsImV4cCI6MjEwMTcwMzIzNX0.TgL4nfQp-LkPwEr9Gr3JW3clmsLskDis-hZ_Y3bdEFk"
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZHlueWJpanFsYmViZnRkZ3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxMjcyMzUsImV4cCI6MjEwMTcwMzIzNX0.TgL4nfQp-LkPwEr9Gr3JW3cl[...]"
     );
   </script>
 </head>
