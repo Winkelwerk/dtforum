@@ -14,6 +14,12 @@ h1, h2, h3 {
   letter-spacing: 1px;
 }
 
+h1 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto 0;
+}
+
 /* --- Container --- */
 #posts, .form-container {
   width: 90%;
@@ -79,6 +85,12 @@ button:hover {
   line-height: 1.5;
 }
 
+.comment-count {
+  margin-left: 8px;
+  color: #ccc;
+  font-size: 13px;
+}
+
 /* --- Trennlinie --- */
 hr {
   border: none;
@@ -107,4 +119,78 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+#main-container {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  align-items: flex-start;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.content #posts,
+.content .form-container {
+  width: auto;
+  max-width: none;
+  margin: 0 0 20px 0;
+}
+
+#comments-sidebar {
+  width: 320px;
+  background: #262626;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+}
+
+.comment-item {
+  background: #1f1f1f;
+  border-left: 3px solid #ffcc00;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.comment-item .meta {
+  color: #ccc;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.comment-item .text {
+  line-height: 1.4;
+}
+
+.top-post {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: #1f1f1f;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  #main-container {
+    flex-direction: column;
+  }
+
+  #comments-sidebar {
+    width: auto;
+    position: static;
+    max-height: none;
+  }
 }

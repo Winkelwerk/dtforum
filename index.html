@@ -23,13 +23,27 @@
 <body>
   <h1>Forum</h1>
 
-  <h3>Neuen Beitrag erstellen</h3>
-  <input id="title" placeholder="Titel">
-  <textarea id="content" placeholder="Inhalt"></textarea>
-  <button onclick="createPost()">Erstellen</button>
+  <div id="main-container">
+    <main class="content">
+      <div class="form-container">
+        <h3>Neuen Beitrag erstellen</h3>
+        <input id="title" placeholder="Titel">
+        <textarea id="content" placeholder="Inhalt"></textarea>
+        <button onclick="createPost()">Erstellen</button>
+      </div>
 
-  <h3>Beiträge</h3>
-  <div id="posts"></div>
+      <h3>Beiträge</h3>
+      <div id="posts"></div>
+    </main>
+
+    <aside id="comments-sidebar">
+      <h3>Letzte Kommentare</h3>
+      <div id="comments-overview">Lade Kommentare…</div>
+      <hr>
+      <h3>Top kommentierte Beiträge</h3>
+      <div id="top-posts">Lade Übersicht…</div>
+    </aside>
+  </div>
 
   <!-- Dein Script MUSS als letztes geladen werden -->
   <script src="script.js"></script>
