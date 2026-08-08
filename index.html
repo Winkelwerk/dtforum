@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Forum</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Supabase laden -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+
+  <!-- Supabase initialisieren -->
+  <script>
+    // Wir erstellen den Supabase-Client als window.supabaseClient, damit das UMD-Objekt nicht überschrieben wird.
+    // Verwende hier deinen ANON-Key (öffentlich, eingeschränkte Rechte). Niemals einen service_role Key clientseitig veröffentlichen.
+    window.supabase = window.supabase.createClient(
+      "https://vjdynybijqlbebftdguj.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZHlueWJpanFsYmViZnRkZ3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxMjcyMzUsImV4cCI6MjEwMTcwMzIzNX0.TgL4nfQp-LkPwEr9Gr3JW3clmsLskDis-hZ_Y3bdEFk"
+    );
+  </script>
+</head>
+
+<body>
+  <h1>Forum</h1>
+
+  <div id="main-container">
+    <main class="content">
+      <div class="form-container">
+        <h3>Neuen Beitrag erstellen</h3>
+        <input id="title" placeholder="Titel">
+        <textarea id="content" placeholder="Inhalt"></textarea>
+        <button onclick="createPost()">Erstellen</button>
+      </div>
+
+      <h3>Beiträge</h3>
+      <div id="posts"></div>
+    </main>
+
+    <aside id="comments-sidebar">
+      <h3>Letzte Kommentare</h3>
+      <div id="comments-overview">Lade Kommentare…</div>
+      <hr>
+      <h3>Top kommentierte Beiträge</h3>
+      <div id="top-posts">Lade Übersicht…</div>
+    </aside>
+  </div>
+
+  <!-- Dein Script MUSS als letztes geladen werden -->
+  <script src="script.js"></script>
+</body>
+</html>
