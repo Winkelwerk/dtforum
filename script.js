@@ -18,7 +18,7 @@ function truncate(str, n = 140) {
 async function loadPosts() {
   // supabase-Client ist jetzt als window.supabase verfügbar
   const { data, error } = await window.supabase
-    .from("public.posts")
+    .from("posts")
     .select("*")
     .order("id", { ascending: false });
 
@@ -38,7 +38,7 @@ async function loadPosts() {
   let commentCounts = {};
   if (postIds.length > 0) {
     const { data: commentsForPosts, error: cErr } = await window.supabase
-      .from("public.comments")
+      .from("comments")
       .select("post_id")
       .in("post_id", postIds);
 
@@ -80,7 +80,7 @@ async function createPost() {
   }
 
   const { error } = await window.supabase
-    .from("public.posts")
+    .from("posts")
     .insert([{ title, content }]);
 
   if (error) {
@@ -100,7 +100,7 @@ async function deletePost(id) {
   if (!confirm("Beitrag wirklich löschen?")) return;
 
   const { error } = await window.supabase
-    .from("public.posts")
+    .from("posts")
     .delete()
     .eq("id", id);
 
@@ -121,7 +121,7 @@ async function editPost(id, oldTitle, oldContent) {
   if (content === null) return;
 
   const { error } = await window.supabase
-    .from("public.posts")
+    .from("posts")
     .update({ title, content })
     .eq("id", id);
 
@@ -144,7 +144,7 @@ async function loadCommentsOverview() {
 
   // Fetch recent comments (most recent 10)
   const { data: recentComments, error: err1 } = await window.supabase
-    .from("public.comments")
+    .from("comments")
     .select("id, post_id, author, content, created_at")
     .order("created_at", { ascending: false })
     .limit(10);
@@ -167,7 +167,7 @@ async function loadCommentsOverview() {
 
   // Fetch counts for top posts
   const { data: allComments, error: err2 } = await window.supabase
-    .from("public.comments")
+    .from("comments")
     .select("post_id");
 
   if (err2) {
@@ -183,7 +183,7 @@ async function loadCommentsOverview() {
     } else {
       const postIds = tops.map(t => Number(t[0]));
       const { data: postsData } = await window.supabase
-        .from("public.posts")
+        .from("posts")
         .select("id, title")
         .in("id", postIds);
 
